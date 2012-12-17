@@ -1,4 +1,6 @@
-var validStrings = [
+var validStrings, invalidStrings; // used for stringifyJSON and parseJSON specs
+
+validStrings = [
   // basic stuff
   '[]',
   '{"foo": ""}',
@@ -83,7 +85,7 @@ var validStrings = [
     '      }\r\n'
 ];
 
-var invalidStrings = [
+invalidStrings = [
     '["foo", "bar"',
     '["foo", "bar\\"]'
 ];
