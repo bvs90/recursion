@@ -1,4 +1,12 @@
-var validStrings, invalidStrings; // used for stringifyJSON and parseJSON specs
+var validStrings, invalidStrings, // used for stringifyJSON and parseJSON specs
+  weirdObjects; // used for stringifyJSON spec
+
+weirdObjects = [
+  { 
+    "functions": function(){},
+    "undefined": undefined
+  }
+];
 
 validStrings = [
   // basic stuff
