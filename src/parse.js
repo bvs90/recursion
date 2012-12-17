@@ -1,0 +1,1 @@
+var parseJSON = JSON.parse; // fixme
