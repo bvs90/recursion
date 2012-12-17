@@ -1,4 +1,26 @@
-var tests = [
+// test cases are described at the bottom of this spec
+var validStrings, invalidStrings;
+
+describe("parse", function(){
+  it("should match the result of calling JSON.parse", function(){
+    validStrings.forEach(function(test){
+      var result = parseJSON(test);
+      var expected = JSON.parse(test);
+      expect(_.isEqual(result, expected)).toBeTruthy();
+    });
+  })
+
+  it("should error out sometimes", function(){
+    invalidStrings.forEach(function(test){
+      // expect(parseJSON(test)).toBe(undefined); // you can use this test if you'd prefer
+      expect(function(){
+        parseJSON(test);
+      }).toThrow();
+    });
+  })
+});
+
+validStrings = [
   // basic stuff
   '[]',
   '{"foo": ""}',
@@ -21,10 +43,6 @@ var tests = [
   // escaping
   '["\\\\\\"\\"a\\""]',
   '["and you can\'t escape thi\s"]',
-  
-  // error handling
-  // '["foo", "bar"',
-  // '["foo", "bar\"]',
   
   // everything all at once
   '{"CoreletAPIVersion":2,"CoreletType":"standalone",' +
@@ -87,12 +105,7 @@ var tests = [
     '      }\r\n'
 ];
 
-describe("parse", function(){
-  it("should match the result of calling JSON.parse", function(){
-    tests.forEach(function(test){
-      var result = parseJSON(test);
-      var expected = JSON.parse(test);
-      expect(_.isEqual(result, expected)).toBeTruthy();
-    });
-  })
-});
+invalidStrings = [
+    '["foo", "bar"',
+    '["foo", "bar\\"]'
+];
