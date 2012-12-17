@@ -1,5 +1,5 @@
 // test cases are described in fixtures.js
-describe("stringify", function(){
+describe("stringifyJSON", function(){
   it("should match the result of calling JSON.stringify", function(){
     validStrings.forEach(function(test){
       var obj = JSON.parse(test);
