@@ -5,6 +5,7 @@ var htmlStrings = [
   "<p><p class='targetClassName'><p class='targetClassName'></p></p></p>",
   "<p><p></p><p><p class='targetClassName'></p></p></p>",
   "<p><p class='targetClassName'></p><p class='targetClassName'></p></p>",
+  "<p><div class='somediv'><div class='innerdiv'><span class='targetClassName'>yay</span></div></div></p>"
 ];
 
 describe("getElementsByClassName", function(){
