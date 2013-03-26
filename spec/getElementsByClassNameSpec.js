@@ -14,15 +14,14 @@ describe("getElementsByClassName", function(){
     htmlStrings.forEach(function(htmlString){
       var $rootElement = $(htmlString);
       $("body").append($rootElement);
-      
+
       var result = getElementsByClassName("targetClassName");
       var expectedNodeList = document.getElementsByClassName("targetClassName");
-      var expectedArray = Array.prototype.slice.apply(expectedNodeList);
-      var equality = _.isEqual(result, expectedArray); // why can't we use `===` here?
+      var equality = _.isEqual(result, expectedNodeList); // why can't we use `===` here?
       expect(equality).toBeTruthy();
 
       $rootElement.remove();
     });
-  })
+  });
 
 });
