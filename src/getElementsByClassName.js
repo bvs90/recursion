@@ -1,9 +1,9 @@
-// you're not allowed to do things the easy way like this:
+// If life was easy, we could just do things the easy way:
 // var getElementsByClassName = function (className) {
 //   return document.getElementsByClassName(className);
 // };
 
-// you'll have to implement it from scratch here:
+// But in stead we're going to implement it from scratch:
 var getElementsByClassName = function (className) {
   // your code here
 };
