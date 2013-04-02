@@ -15,7 +15,7 @@ describe("parseJSON", function(){
     //   var equality = _.isEqual(result, expected);
     //   expect(equality).toBeTruthy();
     // });
-  })
+  });
 
   it("should error out sometimes", function(){
     invalidStrings.forEach(function(test){
@@ -24,6 +24,6 @@ describe("parseJSON", function(){
         parseJSON(test);
       }).toThrow();
     });
-  })
+  });
 
 });

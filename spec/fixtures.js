@@ -1,14 +1,4 @@
-var validStrings, invalidStrings, // used for stringifyJSON and parseJSON specs
-  weirdObjects; // used for stringifyJSON spec
-
-weirdObjects = [
-  {
-    "functions": function(){},
-    "undefined": undefined
-  }
-];
-
-validObjects = [
+var validObjects = [
   9,
   null,
   true,
@@ -32,7 +22,15 @@ validObjects = [
   {"a":[],"c": {}, "b": true}
 ];
 
-extraCreditStrings = [
+// used for stringifyJSON spec
+var weirdObjects = [
+  {
+    "functions": function(){},
+    "undefined": undefined
+  }
+];
+
+var extraCreditStrings = [
   // escaping
   '["\\\\\\"\\"a\\""]',
   '["and you can\'t escape thi\s"]',
@@ -98,7 +96,8 @@ extraCreditStrings = [
     '      }\r\n'
 ];
 
-invalidStrings = [
+// used for stringifyJSON and parseJSON specs
+var invalidStrings = [
   '["foo", "bar"',
   '["foo", "bar\\"]'
 ];
