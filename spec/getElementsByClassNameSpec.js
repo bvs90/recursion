@@ -15,11 +15,12 @@ describe("getElementsByClassName", function(){
       var $rootElement = $(htmlString);
       $("body").append($rootElement);
 
-      var result = getElementsByClassName("targetClassName");
-      var expectedNodeList = $("targetClassName");
-      expectedNodeList = _.toArray(expectedNodeList); // makes expected node list an array object to match array style of result
+      var resultNodeList = getElementsByClassName("targetClassName");
+      var resultNodes = _.toArray(resultNodeList);
+      var $expectedNodes = $(".targetClassName");
+      var expectedNodes = _.toArray($expectedNodes);
 
-      expect(result).toEqual(expectedNodeList);
+      expect(resultNodes).toEqual(expectedNodes);
 
       $rootElement.remove();
     });
